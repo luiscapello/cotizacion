@@ -26,8 +26,12 @@ class Usuario:
     def registrar(self):
         fecha = datetime.datetime.now()
 
+        #cifrar contraseña
+        cifrado = hashlib.sha256()
+        cifrado.update(self.password.encode('utf8'))
+
         sql = "INSERT INTO usuarios VALUES(%s, %s, %s, %s, %s, %s)"
-        usuario = (self.idEmpleado, self.nombre, self.apellidos, self.email, self.password, fecha)
+        usuario = (self.idEmpleado, self.nombre, self.apellidos, self.email, cifrado.hexdigest(), fecha)
 
         try:
             cursor.execute(sql, usuario)
