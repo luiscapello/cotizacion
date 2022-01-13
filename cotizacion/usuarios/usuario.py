@@ -1,6 +1,6 @@
 import datetime
 import hashlib
-from sqlite3 import connect
+from sqlite3 import Cursor, connect
 import usuarios.conexion as conexion
 
 connect = conexion.conectar()
@@ -25,7 +25,7 @@ class Usuario:
         cifrado = hashlib.sha256()
         cifrado.update(self.password.encode('utf8'))
 
-        sql = "INSERT INTO usuarios VALUES(%s, %s, %s, %s, %s, %s)"
+        sql = "INSERT INTO usuarios VALUES(null,%s, %s, %s, %s, %s, %s)"
         usuario = (self.idEmpleado, self.nombre, self.apellidos, self.email, cifrado.hexdigest(), fecha)
 
         try:
@@ -39,4 +39,19 @@ class Usuario:
 
 
     def identificar(self):
-        return self.nombre
+        #return self.nombre
+
+        #consulta para comprabar si existe el usuario
+        sql = "SELECT * FROM usuarios WHERE email = %s AND password = %s "
+       
+        #cifrar contraseña
+        cifrado = hashlib.sha256()
+        cifrado.update(self.password.encode('utf8'))
+
+        #datos para la consulta
+        usuario = (self.email, cifrado.hexdigest())
+
+        cursor.execute(sql, usuario)
+        result = cursor.fetchone()
+
+        return result
