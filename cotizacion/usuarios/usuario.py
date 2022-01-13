@@ -1,16 +1,11 @@
-import mysql.connector
 import datetime
 import hashlib
+from sqlite3 import connect
+import usuarios.conexion as conexion
 
-database = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="cotizacion",
-    port="3306"
-)
-
-cursor = database.cursor(buffered = True)
+connect = conexion.conectar()
+database = connect[0]
+cursor = connect[1]
 
 
 class Usuario:
