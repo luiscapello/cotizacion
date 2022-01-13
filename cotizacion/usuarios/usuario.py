@@ -39,8 +39,6 @@ class Usuario:
 
 
     def identificar(self):
-        #return self.nombre
-
         #consulta para comprabar si existe el usuario
         sql = "SELECT * FROM usuarios WHERE email = %s AND password = %s "
        
