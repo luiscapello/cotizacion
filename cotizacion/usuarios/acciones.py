@@ -1,4 +1,3 @@
-import email
 import usuarios.usuario as modelo
 
 class Acciones:
@@ -37,3 +36,8 @@ class Acciones:
             print(type(e))
             print(type(e).__name__)
             print(f"login incorrecto")
+
+    def proximasAcciones(self, usuario):
+
+
+        return None
