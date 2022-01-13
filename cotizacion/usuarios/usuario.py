@@ -15,7 +15,7 @@ cursor = database.cursor(buffered = True)
 
 class Usuario:
 
-    def __init__(self,idEmpleado, nombre, apellidos, email, password):
+    def __init__(self, idEmpleado, nombre, apellidos, email, password):
         self.idEmpleado = idEmpleado
         self.nombre = nombre
         self.apellidos = apellidos
