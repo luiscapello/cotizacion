@@ -27,8 +27,8 @@ class Acciones:
             email = input("Introduce tu email: ")
             password = input("Introduce tu contraseña:")
 
-            usuario = modelo.Usuario('','','',email, password)
-            ingresa = usuario.identificar()
+            usuario = modelo.Usuario('','','',email, password) #pasamos los parametros que vamos a comparar
+            ingresa = usuario.identificar() # guardamos los parametros
 
             if email == ingresa[4]:
                 print(f"Bienvenido {ingresa[2]}, has ingresado correctamente")
@@ -52,7 +52,7 @@ class Acciones:
 
         if accion == "crear":
             print("\nVamos a crear")
-            self.proximasAcciones(usuario)
+            self.proximasAcciones(usuario) #retornamos la funcion hasta que el usuario salga
 
         elif accion == "mostrar":
             print("\nVamos a mostrar")
