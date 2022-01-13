@@ -1,3 +1,4 @@
+import email
 import usuarios.usuario as modelo
 
 class Acciones:
@@ -23,5 +24,16 @@ class Acciones:
     def ingresar(self):
         print("Vale!! identificate en el sistema")
 
-        email = input("Introduce tu email: ")
-        password = input("Introduce tu contraseña:")
+        try:
+            email = input("Introduce tu email: ")
+            password = input("Introduce tu contraseña:")
+
+            usuario = modelo.Usuario('','','',email, password)
+            ingresa = usuario.identificar()
+
+            if email == ingresa[4]:
+                print(f"Bienvenido")
+        except Exception as e:
+            print(type(e))
+            print(type(e).__name__)
+            print(f"login incorrecto")
