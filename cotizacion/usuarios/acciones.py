@@ -49,10 +49,11 @@ class Acciones:
         - salir (salir)
         """)
 
-        accion = input("¿Que deseas hacer?: ")
+        accion = input("\n¿Que deseas hacer?: ")
+        hasEl = notas.acciones.Acciones()
 
         if accion == "crear":
-            print("\nVamos a crear")
+            hasEl.crear(usuario)
             self.proximasAcciones(usuario) #retornamos la funcion hasta que el usuario salga
 
         elif accion == "mostrar":
