@@ -1,3 +1,4 @@
+from cotizacion.usuarios.usuario import Usuario
 import usuarios.usuario as modelo
 import notas.acciones
 
@@ -57,7 +58,7 @@ class Acciones:
             self.proximasAcciones(usuario) #retornamos la funcion hasta que el usuario salga
 
         elif accion == "mostrar":
-            print("\nVamos a mostrar")
+            hazEl.mostrar(usuario)
             self.proximasAcciones(usuario)
 
         elif accion == "eliminar":
