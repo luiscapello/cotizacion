@@ -9,7 +9,7 @@ class Acciones:
         titulo = input("introduce el titulo de tu nota: ")
         descripcion = input("Introduce el contennido de la nota: ")
 
-        nota = modelo.Notas(usuario[0], titulo, descripcion)
+        nota = modelo.Nota(usuario[0], titulo, descripcion)
         guardar = nota.guardar()
 
         if guardar[0] >= 1:
