@@ -4,10 +4,10 @@ import notas.nota as modelo
 class Acciones:
 
     def crear(self, usuario):
-        print(f"\nOk {usuario[2]}!! Vamos a crear una nota...")
+        print(f"\n Ok {usuario[2]}!! Vamos a crear una nota...")
 
-        titulo = input("introduce el titulo de tu nota: ")
-        descripcion = input("Introduce el contennido de la nota: ")
+        titulo = input("\nintroduce el titulo de tu nota: ")
+        descripcion = input("\nIntroduce el contennido de la nota: ")
 
         nota = modelo.Nota(usuario[0], titulo, descripcion)
         guardar = nota.guardar()
