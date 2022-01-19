@@ -5,7 +5,7 @@ use cotizacion;
 """---crear tablas---"""
 CREATE TABLE usuarios(
     id          int(25) auto_increment not null,
-    idEmpledo   int(25) not null,
+    idEmpleado   int(25) not null,
     nombre      varchar(255),
     apellidos   varchar(255),
     email       varchar(255) not null,
