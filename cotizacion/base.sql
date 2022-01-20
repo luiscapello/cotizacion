@@ -11,9 +11,10 @@ CREATE TABLE usuarios(
     email       varchar(255) not null,
     password    varchar(255) not null,
     fecha       date not null,
-    CONSTRAINT  pk_usuarios PRIMARY KEY(id), """ asignar cual campo sera la llave primaria"""
-    CONSTRAINT  uq_empleado UNIQUE(idEmpleado) """restriccion para no registrar usuarios con el mismo email"""
-)ENGINE = InnoDB; """ mantener relacion entre tablas """
+    CONSTRAINT  pk_usuarios PRIMARY KEY(id),        """ asignar cual campo sera la llave primaria """
+    CONSTRAINT  uq_empleado UNIQUE(idEmpleado)      """ restriccion para no registrar usuarios con el mismo codigo de empleado """
+    CONSTRAINT  uq_email UNIQUE(email)              """ restriccion para no registrar usuarios con el mismo codigo de empleado """
+)ENGINE = InnoDB;                                   """ mantener relacion entre tablas """
 
 CREATE TABLE notas(
     id          int(25) auto_increment not null,
@@ -21,6 +22,6 @@ CREATE TABLE notas(
     titulo      varchar(255) not null,
     descripcion MEDIUMTEXT,
     fecha       date not null,
-    CONSTRAINT  pk_notas PRIMARY KEY(id), """ asignar cual campo sera la llave primaria"""
-    CONSTRAINT  fk_nota_usuario FOREIGN KEY(usuario_id) REFERENCES usuarios(id) """ asignar cual campo sera la llave foranea y hacer referencia a la llave primeria de usuario"""
+    CONSTRAINT  pk_notas PRIMARY KEY(id),           """ asignar cual campo sera la llave primaria """
+    CONSTRAINT  fk_nota_usuario FOREIGN KEY(usuario_id) REFERENCES usuarios(id) """ asignar cual campo sera la llave foranea y hacer referencia a la llave primeria de usuario """
 )ENGINE = InnoDB
