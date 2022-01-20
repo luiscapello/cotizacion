@@ -19,7 +19,9 @@ class Acciones:
             print(f"\nPerfecto {registro[1].nombre} te has registrado con el email {registro[1].email} y el numero de empleado {registro[1].idEmpleado }")
 
         else:
-            print("\nNo te has registrado correctamente !!!") 
+            print(f"\n  numero de empleado o correo ya existen en el sistema !!")
+            print(f"          No te has registrado correctamente !!!")
+            print(f"************************************************************") 
 
     def ingresar(self):
         print("Vale!! identificate en el sistema")
